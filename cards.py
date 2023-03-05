@@ -1,17 +1,78 @@
-from flask import Flask
-import requests, json
+suit_meanings = {
+    "Diamonds": {
+        "keywords": [""],
+        "description": [""],
+    },
+    "Hearts": {
+        "keywords": [""],
+        "description": [""]
+    },
+    "Clubs": {
+        "keywords": [""],
+        "description": [""]
+    },
+    "Spades": {
+        "keywords": [""],
+        "description": [""]
+    }
+}
 
-app = Flask(__name__)
+value_meanings = {
+    "A": {
+    "keywords": [""],
+    "description":[""]
+    },
+    2: {
+        "keywords": [""],
+        "description": [""]
+    },    
+    3: {
+        "keywords": [""],
+        "description": [""]
+    },
+    4: {
+        "keywords": [""],
+        "description": [""]
+    },
+    5: {
+        "keywords": [""],
+        "description": [""]
+    },
+    6: {
+        "keywords": [""],
+        "description": [""]
+    },
+    7: {
+        "keywords": [""],
+        "description": [""]
+    },
+    8: {
+        "keywords": [""],
+        "description": [""]
+    },
+    9: {
+        "keywords": [""],
+        "description": [""]
+    },
+    10: {
+        "keywords": [""],
+        "description": [""]
+    },
+    "J": {
+        "keywords": [""],
+        "description": [""]
+    },
+    "Q": {
+        "keywords": [""],
+        "description": [""]
+    },
+    "K": {
+        "keywords": [""],
+        "description": [""]
+    }    
+}
 
-@app.route("/suits")
-def suits():
-    return {"Diamonds":["Jack","Queen","King"]}
-
-@app.route("/deck")
-def deck():
-    get_deck = requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
-    return get_deck.json()
-
-# tells server to launch along with port
-if __name__ == '__main__':
-    app.run(debug=True)
+special_combos = {
+    "codes": ["",""],
+    "description": [""]
+}
