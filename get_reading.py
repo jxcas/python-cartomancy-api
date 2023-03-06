@@ -12,9 +12,7 @@ def get_keywords(card):
     keywords = []
     suit = card["suit"]
     number = card["value"]
-
     keywords.extend(suit_meanings[suit]["keywords"])
     keywords.extend(number_meanings[number]["keywords"])
-
     random.shuffle(keywords)
     return keywords 

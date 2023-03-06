@@ -11,20 +11,21 @@ def deck():
     return get_deck.json()
 
 @app.route("/draw_card")
-def draw_card():
-    draw = requests.get("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
-    return draw.json()
+def draw_card(deck_id):
+    if not deck_id:
+        get_deck = requests.get("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+        deck_id = get_deck.json()["deck_id"]
+    draw = requests.get("https://deckofcardsapi.com/api/deck/{deck_id}/draw/?count=1".format(deck_id=deck_id))
+    spread = get_reading(draw)
+    return spread
 
 @app.route("/draw_three")
 def draw_three():
     get_deck = requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
     deck_id = get_deck.json()["deck_id"]
     draw = requests.get("https://deckofcardsapi.com/api/deck/{deck_id}/draw/?count=3".format(deck_id=deck_id))
-
     spread = get_reading(draw)
-
     return spread
-    
 
 @app.route("/suits")
 def suits():
