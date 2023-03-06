@@ -1,6 +1,6 @@
 from flask import Flask
 import requests, json
-from cards import suit_meanings, value_meanings, special_combos
+from cards import suit_meanings, number_meanings, special_combos
 from get_reading import get_reading
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def draw_three():
 
     spread = get_reading(draw)
 
-    return draw.json()
+    return spread
     
 
 @app.route("/suits")
@@ -32,7 +32,7 @@ def suits():
 
 @app.route("/numbers")
 def numbers():
-    return value_meanings;
+    return number_meanings;
 
 @app.route("/special")
 def special():
@@ -47,18 +47,7 @@ if __name__ == '__main__':
 
 # TODO:
 # basic card functionality from Deck of Cards API
-    # shuffle
-    # draw (3 spread)
+    # shuffle DONE
+    # draw (3 spread) DONE
     # display drawn cards
 # dict with cartomancy meanings
-# one-to-one connection w Deck of Cards by suit/number
-# return combined object
-    # spread: {
-    #   first_card: {
-    #       "code": ""
-    #       "value": ""
-    #       "suit": ""
-    #       "position_name": ""  # this is set by the client-side request?
-    #       "keywords": ["","",""]  # possible this is actually determined by the value and suit, calling on 
-    #       "description": ["","",""]
-    # }}

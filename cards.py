@@ -1,28 +1,28 @@
 suit_meanings = {
-    "Diamonds": {
+    "DIAMONDS": {
         "theme": "Matter",
         "keywords": ["success", "recognition", "imagination", "power", "money", "legal judgments"],
         "description": "",
     },
-    "Hearts": {
+    "HEARTS": {
         "theme": "Emotions",
         "keywords": ["love", "peace", "friendships", "relationships", "sharing", "healing"],
         "description": ""
     },
-    "Clubs": {
+    "CLUBS": {
         "theme": "Energy",
         "keywords": ["passions", "achievement", "social life", "luck", "growth", "business interactions"],
         "description": ""
     },
-    "Spades": {
+    "SPADES": {
         "theme": "Thoughts",
         "keywords": ["loss", "challenges", "setbacks", "obstacles", "secrets", "conflict"],
         "description": ""
     }
 }
 
-value_meanings = {
-    "A": {
+number_meanings = {
+    "ACE": {
         "keywords": ["new beginnings", "leadership", "independent thought", "fresh opportunity"],
         "description": ""
     },
@@ -62,15 +62,15 @@ value_meanings = {
         "keywords": ["completion", "end of cycle", "overabundance", "preoccupation"],
         "description": ""
     },
-    "J": {
+    "JACK": {
         "keywords": ["youth", "noncommittal", "neutrality", "stubbornness"],
         "description": ""
     },
-    "Q": {
+    "QUEEN": {
         "keywords": ["nurturing", "arbitration", "intuition", "growth"],
         "description": ""
     },
-    "K": {
+    "KING": {
         "keywords": ["authority", "control", "practicality", "assertiveness"],
         "description": ""
     }    
